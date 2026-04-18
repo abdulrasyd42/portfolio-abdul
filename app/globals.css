@@ -1,26 +1,47 @@
-@import "tailwindcss";
+/* Import font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variabel warna — ini yang membuat dark mode bisa bekerja */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #f0ece4;
+  --bg-card: #ffffff;
+  --text: #0a0a0a;
+  --text-muted: #7a7a7a;
+  --border: #1a1a1a;
+  --accent: #00c4a0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --bg: #080808;
+  --bg-card: #141414;
+  --text: #f0ece4;
+  --text-muted: #666660;
+  --border: #2a2a2a;
+  --accent: #00ffe5;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* Smooth scroll saat klik nav link */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Teks yang dipilih akan berwarna aksen */
+::selection {
+  background: var(--accent);
+  color: #000;
 }
