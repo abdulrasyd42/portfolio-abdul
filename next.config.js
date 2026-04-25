@@ -1,12 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  basePath: '/portfolio-abdul',
-  assetPrefix: '/portfolio-abdul/',
-  trailingSlash: true,
-
   images: {
-    unoptimized: true,
+    // Tidak perlu remotePatterns lagi kalau semua gambar lokal
+    // Tapi kalau masih mau pakai campuran (lokal + eksternal), 
+    // biarkan saja seperti semula
   },
 }
 
